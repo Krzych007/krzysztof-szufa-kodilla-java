@@ -27,6 +27,7 @@ public class ShapeCollectorTestSuite {
         collector.removeFigure(circle);
 
         Assertions.assertEquals(circle, collector.getFigure(0));
+        Assertions.assertNull(collector.getFigure(1));
     }
 
     @Test

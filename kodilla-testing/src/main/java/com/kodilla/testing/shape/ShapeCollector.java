@@ -15,8 +15,11 @@ public class ShapeCollector {
         shapes.remove(shape);
     }
 
-    public Shape getFigure(int n){
-       return shapes.get(n);
+    public Shape getFigure(int n) {
+        if (n < 0 || n >= shapes.size()) {
+            return null;
+        }
+        return shapes.get(n);
     }
 
     public String showFigures() {
