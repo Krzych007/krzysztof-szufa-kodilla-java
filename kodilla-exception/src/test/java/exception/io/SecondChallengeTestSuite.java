@@ -39,4 +39,25 @@ public class SecondChallengeTestSuite {
         secondChallenge = new SecondChallenge();
         assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(1.2, 1.5));
     }
+
+    @Test
+    void shouldReturnDoneForUpperBoundaryJustBelow2() throws Exception {
+        secondChallenge = new SecondChallenge();
+        String result = secondChallenge.probablyIWillThrowException(1.999999, 1.4);
+        assertEquals("Done!", result);
+    }
+
+    @Test
+    void shouldThrowExceptionWhenXJustBelow1() {
+        secondChallenge = new SecondChallenge();
+        assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(0.999999, 1.4));
+    }
+
+    @Test
+    void shouldReturnDoneWhenYNear15ButNotEqual() throws Exception {
+        secondChallenge = new SecondChallenge();
+        String result = secondChallenge.probablyIWillThrowException(1.2, 1.499999);
+        assertEquals("Done!", result);
+    }
+
 }
