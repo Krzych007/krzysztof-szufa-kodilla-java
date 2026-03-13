@@ -22,7 +22,7 @@ public class SkyScanner {
         Map<String, Boolean> destinationMap = new HashMap<>();
         destinationMap.put("KRK", true);
         destinationMap.put("GDA", true);
-        destinationMap.put("WWA", false);
+        destinationMap.put("WAW", false);
 
         String arrival = flight.getArrivalAirport();
 
